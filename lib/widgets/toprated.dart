@@ -13,42 +13,50 @@ class TopRatedMovies extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           modified_text(
-            text: 'Top Rated Movies',
+            text: 'Based On your likes ❤',
             size: 26,
           ),
           SizedBox(height: 10),
           Container(
-              height: 270,
-              child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: toprated.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      width: 140,
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                    'https://image.tmdb.org/t/p/w500' +
-                                        toprated[index]['poster_path']),
-                              ),
-                            ),
-                            height: 200,
+            height: 270,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: toprated.length,
+              itemBuilder: (context, index) {
+                return Container(
+                  width: 140,
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                'https://image.tmdb.org/t/p/w500' +
+                                    toprated[index]['poster_path']),
                           ),
-                          SizedBox(height: 5),
-                          Container(
-                            child: modified_text(
-                                size: 15,
-                                text: toprated[index]['title'] != null
-                                    ? toprated[index]['title']
-                                    : 'Loading'),
-                          )
-                        ],
+                        ),
+                        height: 200,
                       ),
-                    );
-                  }))
+                      SizedBox(height: 5),
+                      Container(
+                        child: modified_text(
+                            size: 15,
+                            text: toprated[index]['title'] != null
+                                ? toprated[index]['title']
+                                : 'Loading'),
+                      )
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+          Center(
+            child: Text(
+              'Thank You for using our App ❤.',
+              textAlign: TextAlign.center,
+            ),
+          ),
         ],
       ),
     );
