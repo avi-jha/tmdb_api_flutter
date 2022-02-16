@@ -34,7 +34,7 @@ class _HomeState extends State<Home> {
     );
 
     Map trendingresult = await tmdbWithCustomLogs.v3.trending.getTrending();
-    Map tvresult = await tmdbWithCustomLogs.v3.tv.getPouplar();
+    Map tvresult = await tmdbWithCustomLogs.v3.tv.getPopular();
     print((trendingresult));
     setState(() {
       trendingmovies = trendingresult['results'];

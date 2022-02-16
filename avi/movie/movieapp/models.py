@@ -12,15 +12,16 @@ class MyCSvModel(models.Model):
 
      class Meta:
          db_table='csvmodel'
-csvmodel=MyCSvModel()
-title1=controller.title
-ratt1=controller.ratt
-genres1=controller.genres
-for i in range(len(title1)):
-    csvmodel.Title=str(title1[i])
-    csvmodel.RatingTomatometer=int(ratt1[i])
-    csvmodel.Genres=str(genres1[i])
-    csvmodel.save()
+
+# csvmodel=MyCSvModel()
+# title1=controller.title
+# ratt1=controller.ratt
+# genres1=controller.genres
+# for i in range(len(title1)):
+#     csvmodel.Title=str(title1[i])
+#     csvmodel.RatingTomatometer=int(ratt1[i])
+#     csvmodel.Genres=str(genres1[i])
+#     csvmodel.save()
 
 class moviep(models.Model):
     preference= models.CharField(max_length = 300, default='#')
